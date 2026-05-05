@@ -11,13 +11,13 @@ function Home() {
         </div>
 
         <div className="">
-            <img src="./images/my-photo.jpg" className="rounded-full border dark:border-gray-700 mt-2 md:mr-2 bg-green-800 w-[450px] h-auto p-1" alt="my-photo" />
+            <img src="/images/my-photo.jpg" className="rounded-full border dark:border-gray-700 mt-2 md:mr-2 bg-green-800 w-[450px] h-auto p-1" alt="my-photo" />
         </div>
         </div>
 
         <div className=" md:justify-left md:w-fit pl-6 mb-6 md:flex justify-center flex gap-4 mt-6 md:mt-0 pb-12">
             <Link to="/about" className="font-semibold hover:text-white hover:bg-green-600 dark:hover:bg-green-500 duration-300 border dark:border-gray-700 transition p-2 text-1xl rounded-full block">Know About Me</Link>
-            <a href="./documents/my cv.docx" target="_blank" download="Mohcene Ziadi CV" className="font-semibold bg-green-600 dark:bg-green-700 text-white hover:bg-green-700 dark:hover:bg-green-600 duration-300 transition p-2 text-1xl rounded-full block">Download My CV</a>
+            <a href="/documents/my cv.docx" target="_blank" download="Mohcene Ziadi CV" className="font-semibold bg-green-600 dark:bg-green-700 text-white hover:bg-green-700 dark:hover:bg-green-600 duration-300 transition p-2 text-1xl rounded-full block">Download My CV</a>
         </div>
     </main>
 
@@ -112,7 +112,7 @@ function Home() {
         <div className="flex justify-center flex-wrap gap-6">
             <div className="rounded-lg bg-gray-300 dark:bg-gray-800 w-[90%] md:w-[45%] shadow dark:shadow-gray-900/50">
                 <div className="overflow-hidden rounded-t-lg">
-                <img src="./images/restaurant-.png" className="w-full h-[300px] rounded-t-lg hover:scale-105 duration-500" alt="" />
+                <img src="/images/restaurant-.png" className="w-full h-[300px] rounded-t-lg hover:scale-105 duration-500" alt="" />
                 </div>
                 <h2 className="pt-4 ml-4 text-2xl font-bold dark:text-gray-100">Restaurant Order Manager</h2>
                 <p className="p-4 dark:text-gray-300">Restaurant Order Manager is a simple web application that allows restaurants to manage customer orders efficiently.
@@ -130,7 +130,7 @@ function Home() {
 
             <div className="rounded-lg bg-gray-300 dark:bg-gray-800 w-[90%] md:w-[45%] shadow dark:shadow-gray-900/50">
                 <div className="overflow-hidden rounded-t-lg">
-                <img src="./images/memory-game.png" className="w-full h-[300px] rounded-t-lg hover:scale-105 duration-500" alt="" />
+                <img src="/images/memory-game.png" className="w-full h-[300px] rounded-t-lg hover:scale-105 duration-500" alt="" />
                 </div>
                 <h2 className="pt-4 ml-4 text-2xl font-bold dark:text-gray-100">Memory Game</h2>
                 <p className="p-4 dark:text-gray-300">Memory Game is a fun web-based game with modern layout and design where players flip cards to match pairs. It challenges your memory
@@ -167,7 +167,7 @@ function Home() {
 
             <div className="rounded-lg bg-gray-300 dark:bg-gray-800 w-[90%] md:w-[45%] shadow dark:shadow-gray-900/50">
                 <div className="overflow-hidden rounded-t-lg">
-                <img src="./images/green-alg.png" className="w-full h-[300px] rounded-t-lg hover:scale-105 duration-500" alt="" />
+                <img src="/images/green-alg.png" className="w-full h-[300px] rounded-t-lg hover:scale-105 duration-500" alt="" />
                 </div>
                 <h2 className="pt-4 ml-4 text-2xl font-bold dark:text-gray-100">The Green Algeria</h2>
                 <p className="p-4 dark:text-gray-300">The Green Algeria is a project promoting tree planting to fight desertification and restore lost trees.
@@ -185,7 +185,7 @@ function Home() {
             </div>
             <div className="rounded-lg bg-gray-300 dark:bg-gray-800 w-[90%] md:w-[45%] shadow dark:shadow-gray-900/50">
                 <div className="overflow-hidden rounded-t-lg">
-                <img src="./images/l2-g07-new-app.png" className="w-full h-[300px] rounded-t-lg hover:scale-105 duration-500" alt="" />
+                <img src="/images/l2-g07-new-app.png" className="w-full h-[300px] rounded-t-lg hover:scale-105 duration-500" alt="" />
                 </div>
                 <h2 className="pt-4 ml-4 text-2xl font-bold dark:text-gray-100">Courses App</h2>
                 <p className="p-4 dark:text-gray-300">The Dynamic Web App is for L2 G07 courses at the University of Batna 02, Faculty of Letters and Foreign Languages.
@@ -203,7 +203,7 @@ function Home() {
             </div>
             <div className="rounded-lg bg-gray-300 dark:bg-gray-800 w-[90%] md:w-[45%] shadow dark:shadow-gray-900/50">
                 <div className="overflow-hidden rounded-t-lg">
-                <img src="./images/student attendance.png" className="w-full h-[300px] rounded-t-lg hover:scale-105 duration-500" alt="" />
+                <img src="/images/student attendance.png" className="w-full h-[300px] rounded-t-lg hover:scale-105 duration-500" alt="" />
                 </div>
                 <h2 className="pt-4 ml-4 text-2xl font-bold dark:text-gray-100">Student Attendance Tracker</h2>
                 <p className="p-4 dark:text-gray-300">An online student attendance tracker that allows students to mark their presence and view
