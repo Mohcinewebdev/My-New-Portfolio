@@ -1,232 +1,199 @@
 import { Link } from "react-router-dom";
+import PageWrapper from "../components/PageWrapper";
+import AnimatedBackground from "../components/AnimatedBackground";
+import { motion } from "framer-motion";
+
+const fadeInUp = {
+  initial: { opacity: 0, y: 30 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true },
+  transition: { duration: 0.6 }
+};
 
 function Home() {
   return (
-    <>
-    <main className="border-b dark:border-gray-800 rounded-b-[10%] bg-gray-100 dark:bg-gray-800 transition-colors duration-300">
-        <div className="md:flex-row justify-between flex-col flex items-center ">
-        <div>
-        <h1 className="text-5xl md:text-6xl font-bold pl-6 pt-8">Hi<span className="text-green-800 dark:text-green-500"> !</span><br /> I'm Mohcene Ziadi</h1>
-        <p className="pl-6 font-awesome pt-8 text-gray-800 dark:text-gray-300 text-[18px]">20 years old, A Full Stack Web Developer, Welcome To my Portfolio.</p>
+    <PageWrapper>
+      <main className="relative border-b dark:border-gray-800 rounded-b-[10%] bg-gray-50 dark:bg-gray-800/50 transition-colors duration-300 overflow-hidden">
+        <AnimatedBackground />
+        
+        <div className="md:flex-row justify-between flex-col flex items-center max-w-7xl mx-auto px-4 py-12 md:py-20 relative z-10">
+          <motion.div 
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            className="flex-1"
+          >
+            <h1 className="text-5xl md:text-7xl font-bold">
+              Hi<span className="text-green-600 dark:text-green-500"> !</span><br /> 
+              I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-700 to-emerald-500 dark:from-green-400 dark:to-emerald-300">Mohcene Ziadi</span>
+            </h1>
+            <p className="font-medium pt-8 text-gray-700 dark:text-gray-300 text-xl max-w-lg">
+              Full-stack Web Developer creating responsive, functional, and user-friendly web applications
+            </p>
+            <div className="flex gap-4 mt-12 items-center flex-wrap">
+              <Link to="/projects" className="px-6 py-3 bg-green-700 hover:bg-green-800 text-white font-bold rounded-xl transition duration-300 shadow-lg">View Projects</Link>
+              <Link to="/contact" className="px-6 py-3 bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-white font-bold rounded-xl transition duration-300 border dark:border-gray-600">Contact Me</Link>
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            className="flex-1 flex justify-center mt-12 md:mt-0"
+          >
+            <img className="rounded-3xl border-4 border-green-800 md:w-[400px] w-[300px] shadow-2xl" src="./images/my-photo.jpg" alt="Mohcene Ziadi" />
+          </motion.div>
         </div>
+      </main>
 
-        <div className="">
-            <img src="/images/my-photo.jpg" className="rounded-full border dark:border-gray-700 mt-2 md:mr-2 bg-green-800 w-[450px] h-auto p-1" alt="my-photo" />
-        </div>
-        </div>
+      <div className="max-w-7xl mx-auto px-4">
+        <motion.section 
+          {...fadeInUp}
+          className="text-center py-20"
+        >
+            <img className="rounded-full border-4 border-green-700/20 dark:border-green-500/20 p-2 md:w-[350px] md:h-[350px] w-[250px] h-[250px] mx-auto object-cover shadow-xl" src="./images/second-photo.jpg" alt="second-photo" />
+            <h2 className="font-bold uppercase text-green-700 dark:text-green-500 text-lg tracking-widest pt-8">About Me</h2>
+            <p className="text-3xl md:text-4xl font-bold pt-4 max-w-4xl mx-auto leading-tight dark:text-gray-100">
+              Passionate developer building modern, <span className="text-green-600">responsive</span> web experiences.
+            </p>
+            <p className="text-gray-600 dark:text-gray-400 text-lg py-8 max-w-3xl mx-auto font-medium">
+              Specializing in JavaScript, React, and PHP/Laravel. I focus on creating clean, efficient code and user-friendly interfaces that solve real-world problems.
+            </p>
 
-        <div className=" md:justify-left md:w-fit pl-6 mb-6 md:flex justify-center flex gap-4 mt-6 md:mt-0 pb-12">
-            <Link to="/about" className="font-semibold hover:text-white hover:bg-green-600 dark:hover:bg-green-500 duration-300 border dark:border-gray-700 transition p-2 text-1xl rounded-full block">Know About Me</Link>
-            <a href="/documents/my cv.docx" target="_blank" download="Mohcene Ziadi CV" className="font-semibold bg-green-600 dark:bg-green-700 text-white hover:bg-green-700 dark:hover:bg-green-600 duration-300 transition p-2 text-1xl rounded-full block">Download My CV</a>
-        </div>
-    </main>
-
-    <section className="text-center">
-        <img className="rounded-full border dark:border-gray-700 mt-4 p-1 bg-green-800 md:w-[370px] md:h-[370px] w-[300px] h-[300px] mx-auto" src="./images/second-photo.jpg" alt="second-photo" />
-        <h2 className="font-semibold uppercase text-green-800 dark:text-green-500 text-[19px] pt-6">About Me</h2>
-        <p className="pAbout font-bold text-2xl pb-3 pt-1 px-2 dark:text-gray-100">Passionate full-stack developer specializing in JavaScript Vanilla 
-            and JavaScript OOP (Object Oriented Programming), React.js, PHP MVC(Model View Controller), LARAVEL and modern web technologies. I create responsive
-            applications with expertise in TailwindCss(CDN, NPM), JavaScript OOP and Proffessional paradigm [CRUD System, DOM, FILTER, Authentication, 
-            Authorization, File Upload, API, and more], Node.js, Always eager to tackle new challenges and build innovative solutions. 
-        </p>
-        <p className="text-gray-800 dark:text-gray-300 text-[18px] py-5 px-2 font-semibold"> Passionate about creating responsive, clean layouts user-friendly applications
-            and learning new technologies. Strong team player with excellent problem-solving and communication skills
-        </p>
-
-        <div className="lg:flex-row justify-between flex-col flex items-center gap-4 mb-10 md:px-4">
-            <div className="flex border dark:border-gray-700 dark:bg-gray-800 rounded-lg w-[70%] lg:w-[45%] py-6 px-2 shadow-sm">
-                <a className="py-2 px-4 font-semibold dark:text-gray-200" href="mailto:webdevmohcine@gmail.com">📧 webdevmohcine@gmail.com</a>
-            </div>
-            <div className="flex border dark:border-gray-700 dark:bg-gray-800 rounded-lg w-[70%] lg:w-[45%] py-6 px-2 shadow-sm">
-                <p className="py-2 px-4 font-semibold dark:text-gray-200">📍​ Batna / Algeria</p>
-            </div>
-        </div>
-        <div className="text-center">
-            <Link to="/contact" className="block px-4 py-2 bg-green-700 hover:bg-green-800 dark:hover:bg-green-600 transition font-semibold w-fit m-auto text-white rounded-lg mb-12">Contact Me</Link>
-        </div>
-    </section>
-
-    <section className="mb-10 pt-10 pb-20 rounded-b-[10%] rounded-t-[10%] bg-gray-100 dark:bg-gray-800 transition-colors duration-300">
-        <h2 className="text-2xl font-bold text-center">My <span className="text-green-700 dark:text-green-500">Skills</span></h2>
-        <p className="text-gray-800 dark:text-gray-300 text-[16px] pb-5 pt-2 px-2 font-semibold text-center">I've worked with a variety of technologies in the web 
-            development world. Here's an overview of my technical skills and expertise.
-        </p>
-        <div className="flex flex-wrap justify-center gap-4">
-            <div className="border dark:border-gray-700 bg-gray-200 dark:bg-gray-700 cursor-pointer transition rounded-lg text-center w-[40%] md:w-[20%] hover:scale-110 duration-500">
-                <i className="fa-brands fa-html5 text-5xl text-orange-600 pt-2"></i>
-                <h2 className="font-bold pt-2 px-3 py-3 text-2xl dark:text-gray-100">HTML5</h2>
-            </div>
-            <div className="border dark:border-gray-700 bg-gray-200 dark:bg-gray-700 cursor-pointer transition rounded-lg text-center w-[40%] md:w-[20%] hover:scale-110 duration-500">
-                <i className="fa-brands fa-css3 text-blue-600 text-5xl pt-2"></i>
-                <h2 className="font-bold pt-2 px-3 py-3 text-2xl dark:text-gray-100">CSS3</h2>
-            </div>
-            <div className="border dark:border-gray-700 bg-gray-200 dark:bg-gray-700 cursor-pointer transition rounded-lg text-center w-[40%] md:w-[20%] hover:scale-110 duration-500">
-                <i className="devicon-tailwindcss-plain text-5xl text-[#38BDF8] pt-2"></i>
-                <h2 className="font-bold pt-2 px-3 py-3 text-2xl dark:text-gray-100">Tailwind CSS</h2>
-            </div>
-            <div className="border dark:border-gray-700 bg-gray-200 dark:bg-gray-700 cursor-pointer transition rounded-lg text-center w-[40%] md:w-[20%] hover:scale-110 duration-500">
-                <i className="fa-brands fa-js text-yellow-400 text-5xl pt-2"></i>
-                <h2 className="font-bold pt-2 px-3 py-3 text-2xl dark:text-gray-100">JavaScript</h2>
-            </div>
-            <div className="border dark:border-gray-700 bg-gray-200 dark:bg-gray-700 cursor-pointer transition rounded-lg text-center w-[40%] md:w-[20%] hover:scale-110 duration-500">
-                <i className="fa-brands fa-react text-[#61DAFB] text-5xl pt-2"></i>
-                <h2 className="font-bold pt-2 px-3 py-3 text-2xl dark:text-gray-100">React</h2>
-            </div>
-            <div className="border dark:border-gray-700 bg-gray-200 dark:bg-gray-700 cursor-pointer transition rounded-lg text-center w-[40%] md:w-[20%] hover:scale-110 duration-500">
-                <i className="fa-brands fa-php text-5xl text-blue-500 pt-2"></i>
-                <h2 className="font-bold pt-2 px-3 py-3 text-2xl dark:text-gray-100">PHP</h2>
-            </div>
-            <div className="border dark:border-gray-700 bg-gray-200 dark:bg-gray-700 cursor-pointer transition rounded-lg text-center w-[40%] md:w-[20%] hover:scale-110 duration-500">
-                <i className="fa-brands fa-laravel text-5xl text-red-600 pt-2"></i>
-                <h2 className="font-bold pt-2 px-3 py-3 text-2xl dark:text-gray-100">LARAVEL</h2>
-            </div>
-            <div className="border dark:border-gray-700 bg-gray-200 dark:bg-gray-700 cursor-pointer transition rounded-lg text-center w-[40%] md:w-[20%] hover:scale-110 duration-500">
-                <i className="devicon-mysql-original text-5xl text-blue-400 pt-2"></i>
-                <h2 className="font-bold pt-2 px-3 py-3 text-2xl dark:text-gray-100">MySQL</h2>
-            </div>
-            <div className="border dark:border-gray-700 bg-gray-200 dark:bg-gray-700 cursor-pointer transition rounded-lg text-center w-[40%] md:w-[20%] hover:scale-110 duration-500">
-                <i className="fa-brands fa-npm text-5xl text-red-600 pt-2"></i>
-                <h2 className="font-bold pt-2 px-3 py-3 text-2xl dark:text-gray-100">npm</h2>
-            </div>
-            <div className="border dark:border-gray-700 bg-gray-200 dark:bg-gray-700 cursor-pointer transition rounded-lg text-center w-[40%] md:w-[20%] hover:scale-110 duration-500">
-                <i className="fa-brands fa-git-alt text-5xl text-red-500 pt-2"></i>
-                <h2 className="font-bold pt-2 px-3 py-3 text-2xl dark:text-gray-100">Git</h2>
-            </div>
-            <div className="border dark:border-gray-700 bg-gray-200 dark:bg-gray-700 cursor-pointer transition rounded-lg text-center w-[40%] md:w-[20%] hover:scale-110 duration-500">
-                <i className="fa-brands fa-github text-5xl pt-2 dark:text-white"></i>
-                <h2 className="font-bold pt-2 px-3 py-3 text-2xl dark:text-gray-100">GitHub</h2>
-            </div>
-            <div className="border dark:border-gray-700 bg-gray-200 dark:bg-gray-700 cursor-pointer transition rounded-lg text-center w-[40%] md:w-[20%] hover:scale-110 duration-500">
-                <i className="devicon-vercel-original text-5xl pt-2 dark:text-white"></i>
-                <h2 className="font-bold pt-2 px-3 py-3 text-2xl dark:text-gray-100">Vercel</h2>
-            </div>
-        </div>
-    </section>
-
-    <section className="mb-16">
-       <h2 className="text-2xl font-bold text-center">My <span className="text-green-700 dark:text-green-500">Projects</span></h2>
-       <p className="text-gray-800 dark:text-gray-300 text-[16px] pb-5 pt-2 px-2 font-semibold text-center">Here are some of my projects. Each project showcases different
-        skills and technologies I've worked with.
-        </p>
-
-        <div className="flex justify-center flex-wrap gap-6">
-            <div className="rounded-lg bg-gray-300 dark:bg-gray-800 w-[90%] md:w-[45%] shadow dark:shadow-gray-900/50">
-                <div className="overflow-hidden rounded-t-lg">
-                <img src="/images/restaurant-.png" className="w-full h-[300px] rounded-t-lg hover:scale-105 duration-500" alt="" />
+            <div className="flex flex-col md:flex-row justify-center items-center gap-6 mb-12">
+                <div className="flex items-center gap-3 bg-white dark:bg-gray-800 border dark:border-gray-700 rounded-2xl p-6 w-full md:w-auto shadow-sm">
+                    <span className="text-2xl">📧</span>
+                    <a className="font-semibold dark:text-gray-200" href="mailto:webdevmohcine@gmail.com">webdevmohcine@gmail.com</a>
                 </div>
-                <h2 className="pt-4 ml-4 text-2xl font-bold dark:text-gray-100">Restaurant Order Manager</h2>
-                <p className="p-4 dark:text-gray-300">Restaurant Order Manager is a simple web application that allows restaurants to manage customer orders efficiently.
-                     It provides an organized interface to view, add, and track orders in a clear way. built with JavaScript OOP (Object Oriented Programming).</p>
-                <div className="flex gap-2 mx-4 flex-wrap">
-                    <p className="py-1 px-2 bg-gray-100 dark:bg-gray-700 dark:text-gray-200 md:text-[14px] text-[12px] font-semibold rounded-full">HTML</p>
-                    <p className="py-1 px-2 bg-gray-100 dark:bg-gray-700 dark:text-gray-200 md:text-[14px] text-[12px] font-semibold rounded-full">Tailwind CSS</p>
-                    <p className="py-1 px-2 bg-gray-100 dark:bg-gray-700 dark:text-gray-200 md:text-[14px] text-[12px] font-semibold rounded-full">JavaScript OOP</p>
-                </div>
-                <div className="ml-4 my-6">
-                    <a className="text-green-800 dark:text-green-400 text-[18px] font-semibold hover:text-green-700 dark:hover:text-green-300 transition hover:underline"
-                     href="https://restaurant-order-manager-one.vercel.app" target="_blank" rel="noreferrer">↗️ Live Demo</a>
+                <div className="flex items-center gap-3 bg-white dark:bg-gray-800 border dark:border-gray-700 rounded-2xl p-6 w-full md:w-auto shadow-sm">
+                    <span className="text-2xl">📍</span>
+                    <p className="font-semibold dark:text-gray-200">Batna / Algeria</p>
                 </div>
             </div>
+            
+            <Link to="/contact" className="inline-block px-10 py-4 bg-gray-900 dark:bg-green-600 hover:bg-black dark:hover:bg-green-500 text-white font-bold rounded-2xl transition-all shadow-lg">
+              Get In Touch
+            </Link>
+        </motion.section>
 
-            <div className="rounded-lg bg-gray-300 dark:bg-gray-800 w-[90%] md:w-[45%] shadow dark:shadow-gray-900/50">
-                <div className="overflow-hidden rounded-t-lg">
-                <img src="/images/memory-game.png" className="w-full h-[300px] rounded-t-lg hover:scale-105 duration-500" alt="" />
-                </div>
-                <h2 className="pt-4 ml-4 text-2xl font-bold dark:text-gray-100">Memory Game</h2>
-                <p className="p-4 dark:text-gray-300">Memory Game is a fun web-based game with modern layout and design where players flip cards to match pairs. It challenges your memory
-                 and concentration by requiring you to remember the location of cards and match all pairs in the least number of moves.</p>
-                <div className="flex gap-2 mx-4 flex-wrap">
-                    <p className="py-1 px-2 bg-gray-100 dark:bg-gray-700 dark:text-gray-200 md:text-[14px] text-[12px] font-semibold rounded-full">HTML</p>
-                    <p className="py-1 px-2 bg-gray-100 dark:bg-gray-700 dark:text-gray-200 md:text-[14px] text-[12px] font-semibold rounded-full">Tailwind CSS</p>
-                    <p className="py-1 px-2 bg-gray-100 dark:bg-gray-700 dark:text-gray-200 md:text-[14px] text-[12px] font-semibold rounded-full">JavaScript</p>
-                </div>
-                <div className="ml-4 my-6">
-                    <a className="text-green-800 dark:text-green-400 text-[18px] font-semibold hover:text-green-700 dark:hover:text-green-300 transition hover:underline"
-                     href="https://memory-game-five-sage.vercel.app" target="_blank" rel="noreferrer">↗️ Live Demo</a>
-                </div>
+        <motion.section 
+          {...fadeInUp}
+          className="mb-10 py-20 rounded-3xl bg-gray-50 dark:bg-gray-800/50 transition-colors duration-300"
+        >
+            <h2 className="text-4xl font-bold text-center">My <span className="text-green-700 dark:text-green-500">Skills</span></h2>
+            <p className="text-gray-600 dark:text-gray-400 text-lg py-4 px-2 font-medium text-center max-w-2xl mx-auto">
+              A collection of technologies I use to bring ideas to life.
+            </p>
+            <div className="flex flex-wrap justify-center gap-6 px-4 mt-8">
+                {[
+                  { name: "HTML5", icon: "fa-html5", color: "text-orange-600" },
+                  { name: "CSS3", icon: "fa-css3", color: "text-blue-600" },
+                  { name: "Tailwind", icon: "devicon-tailwindcss-plain", color: "text-[#38BDF8]", isDevicon: true },
+                  { name: "JavaScript", icon: "fa-js", color: "text-yellow-400" },
+                  { name: "React", icon: "fa-react", color: "text-[#61DAFB]" },
+                  { name: "PHP", icon: "fa-php", color: "text-blue-500" },
+                  { name: "Laravel", icon: "fa-laravel", color: "text-red-600" },
+                  { name: "MySQL", icon: "devicon-mysql-original", color: "text-blue-400", isDevicon: true },
+                  { name: "Vite", icon: "devicon-vitejs-plain", color: "text-[#646CFF]", isDevicon: true },
+                  { name: "WordPress", icon: "fa-wordpress", color: "text-[#21759b]" },
+                  { name: "npm", icon: "fa-npm", color: "text-red-600" },
+                  { name: "Git", icon: "fa-git-alt", color: "text-red-500" },
+                  { name: "GitHub", icon: "fa-github", color: "dark:text-white" },
+                  { name: "Vercel", icon: "devicon-vercel-original", color: "dark:text-white", isDevicon: true },
+                  { name: "Netlify", icon: "devicon-netlify-plain", color: "text-[#00C7B7]", isDevicon: true }
+                ].map((skill, idx) => (
+                  <motion.div 
+                    key={idx}
+                    whileHover={{ y: -10, scale: 1.05 }}
+                    className="bg-white dark:bg-gray-800 border dark:border-gray-700 p-6 rounded-2xl text-center w-[140px] shadow-sm cursor-default"
+                  >
+                    {skill.isDevicon ? (
+                      <i className={`${skill.icon} text-5xl ${skill.color}`}></i>
+                    ) : (
+                      <i className={`fa-brands ${skill.icon} text-5xl ${skill.color}`}></i>
+                    )}
+                    <h3 className="font-bold mt-4 dark:text-gray-100">{skill.name}</h3>
+                  </motion.div>
+                ))}
+            </div>
+        </motion.section>
+
+        <section className="py-20">
+           <motion.div {...fadeInUp} className="text-center mb-16">
+             <h2 className="text-4xl font-bold">Featured <span className="text-green-700 dark:text-green-500">Projects</span></h2>
+             <p className="text-gray-600 dark:text-gray-400 text-lg mt-4 max-w-2xl mx-auto">
+               Explore some of my recent work and personal projects.
+             </p>
+           </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+                {[
+                  {
+                    title: "Restaurant Manager",
+                    desc: "Efficient order tracking and management system built with JS OOP.",
+                    img: "/images/restaurant-.png",
+                    tags: ["HTML", "Tailwind", "JS OOP"],
+                    link: "https://restaurant-order-manager-one.vercel.app"
+                  },
+                  {
+                    title: "Memory Game",
+                    desc: "Interactive matched-pair game with smooth animations and logic.",
+                    img: "/images/memory-game.png",
+                    tags: ["HTML", "Tailwind", "JavaScript"],
+                    link: "https://memory-game-five-sage.vercel.app"
+                  },
+                  {
+                    title: "The Green Algeria",
+                    desc: "Environmental awareness platform for tree planting initiatives.",
+                    img: "/images/green-alg.png",
+                    tags: ["HTML", "CSS", "JavaScript"],
+                    link: "https://the-green-alg.vercel.app"
+                  },
+                  {
+                    title: "Courses Hub",
+                    desc: "Educational resources and timetable management for students.",
+                    img: "/images/l2-g07-new-app.png",
+                    tags: ["React", "Supabase", "Tailwind"],
+                    link: "https://darling-starship-a6b23f.netlify.app"
+                  }
+                ].map((proj, idx) => (
+                  <motion.div 
+                    key={idx}
+                    {...fadeInUp}
+                    className="group rounded-3xl bg-white dark:bg-gray-800 border dark:border-gray-700 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500"
+                  >
+                    <div className="overflow-hidden h-64 relative">
+                      <img src={proj.img} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt={proj.title} />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
+                         <a href={proj.link} target="_blank" rel="noreferrer" className="text-white font-bold flex items-center gap-2">
+                           Live Demo <span className="text-xl">↗️</span>
+                         </a>
+                      </div>
+                    </div>
+                    <div className="p-8">
+                      <h3 className="text-2xl font-bold dark:text-gray-100">{proj.title}</h3>
+                      <p className="mt-4 text-gray-600 dark:text-gray-400 font-medium">{proj.desc}</p>
+                      <div className="flex gap-2 mt-6 flex-wrap">
+                          {proj.tags.map((tag, tIdx) => (
+                            <span key={tIdx} className="py-1 px-4 bg-gray-100 dark:bg-gray-700 dark:text-gray-300 text-xs font-bold rounded-full uppercase tracking-wider">
+                              {tag}
+                            </span>
+                          ))}
+                      </div>
+                    </div>
+                  </motion.div>
+                ))}
             </div>
 
-          {/* <div className="rounded-lg bg-gray-300 dark:bg-gray-800 w-[90%] md:w-[45%] shadow dark:shadow-gray-900/50">
-                <div className="overflow-hidden rounded-t-lg">
-                <img src="./images/courses-adding.png" className="w-full h-[300px] rounded-t-lg hover:scale-105 duration-500" alt="" />
-                </div>
-                <h2 className="pt-4 ml-4 text-2xl font-bold dark:text-gray-100">Courses Adding</h2>
-                <p className="p-4 dark:text-gray-300">It’s a course management tool that allows students to add, list, and organize their subjects along
-                 with credit values. The simple interface makes it easy to keep track of all courses in one place. It helps students
-                 stay organized and manage their class schedules efficiently.</p>
-                <div className="flex gap-2 mx-4 flex-wrap">
-                    <p className="py-1 px-2 bg-gray-100 dark:bg-gray-700 dark:text-gray-200 md:text-[14px] text-[12px] font-semibold rounded-full">HTML</p>
-                    <p className="py-1 px-2 bg-gray-100 dark:bg-gray-700 dark:text-gray-200 md:text-[14px] text-[12px] font-semibold rounded-full">Tailwind CSS</p>
-                    <p className="py-1 px-2 bg-gray-100 dark:bg-gray-700 dark:text-gray-200 md:text-[14px] text-[12px] font-semibold rounded-full">JavaScript</p>
-                </div>
-                <div className="ml-4 my-6">
-                    <a className="text-green-800 dark:text-green-400 text-[18px] font-semibold hover:text-green-700 dark:hover:text-green-300 transition hover:underline"
-                     href="https://courses-adding.vercel.app" target="_blank" rel="noreferrer">↗️ Live Demo</a>
-                </div>
-            </div>  */}
-
-            <div className="rounded-lg bg-gray-300 dark:bg-gray-800 w-[90%] md:w-[45%] shadow dark:shadow-gray-900/50">
-                <div className="overflow-hidden rounded-t-lg">
-                <img src="/images/green-alg.png" className="w-full h-[300px] rounded-t-lg hover:scale-105 duration-500" alt="" />
-                </div>
-                <h2 className="pt-4 ml-4 text-2xl font-bold dark:text-gray-100">The Green Algeria</h2>
-                <p className="p-4 dark:text-gray-300">The Green Algeria is a project promoting tree planting to fight desertification and restore lost trees.
-                 It aims to beautify the environment and raise awareness about greenery. The site provides tips, locations, and ways
-                  to get involved. It encourages volunteering, donations, and participation in planting campaigns.</p>
-                <div className="flex gap-2 mx-4 flex-wrap">
-                    <p className="py-1 px-2 bg-gray-100 dark:bg-gray-700 dark:text-gray-200 md:text-[14px] text-[12px] font-semibold rounded-full">HTML</p>
-                    <p className="py-1 px-2 bg-gray-100 dark:bg-gray-700 dark:text-gray-200 md:text-[14px] text-[12px] font-semibold rounded-full">Tailwind CSS</p>
-                    <p className="py-1 px-2 bg-gray-100 dark:bg-gray-700 dark:text-gray-200 md:text-[14px] text-[12px] font-semibold rounded-full">JavaScript</p>
-                </div>
-                <div className="ml-4 my-6">
-                    <a className="text-green-800 dark:text-green-400 text-[18px] font-semibold hover:text-green-700 dark:hover:text-green-300 transition hover:underline"
-                     href="https://the-green-alg.vercel.app" target="_blank" rel="noreferrer">↗️ Live Demo</a>
-                </div>
-            </div>
-            <div className="rounded-lg bg-gray-300 dark:bg-gray-800 w-[90%] md:w-[45%] shadow dark:shadow-gray-900/50">
-                <div className="overflow-hidden rounded-t-lg">
-                <img src="/images/l2-g07-new-app.png" className="w-full h-[300px] rounded-t-lg hover:scale-105 duration-500" alt="" />
-                </div>
-                <h2 className="pt-4 ml-4 text-2xl font-bold dark:text-gray-100">Courses App</h2>
-                <p className="p-4 dark:text-gray-300">The Dynamic Web App is for L2 G07 courses at the University of Batna 02, Faculty of Letters and Foreign Languages.
-                     It shows the course list, weekly timetable, and exam schedule. Students can use it to check their courses and assignments.
-                      The page also includes dashboard for teachers where they can upload courses and assignments.</p>
-                <div className="flex gap-2 mx-4 flex-wrap">
-                    <p className="py-1 px-2 bg-gray-100 dark:bg-gray-700 dark:text-gray-200 md:text-[14px] text-[12px] font-semibold rounded-full">React + Vite</p>
-                    <p className="py-1 px-2 bg-gray-100 dark:bg-gray-700 dark:text-gray-200 md:text-[14px] text-[12px] font-semibold rounded-full">Tailwind CSS</p>
-                    <p className="py-1 px-2 bg-gray-100 dark:bg-gray-700 dark:text-gray-200 md:text-[14px] text-[12px] font-semibold rounded-full">Supabase</p>
-                </div>
-                <div className="ml-4 my-6">
-                    <a className="text-green-800 dark:text-green-400 text-[18px] font-semibold hover:text-green-700 dark:hover:text-green-300 transition hover:underline"
-                     href="https://darling-starship-a6b23f.netlify.app" target="_blank" rel="noreferrer">↗️ Live Demo</a>
-                </div>
-            </div>
-            <div className="rounded-lg bg-gray-300 dark:bg-gray-800 w-[90%] md:w-[45%] shadow dark:shadow-gray-900/50">
-                <div className="overflow-hidden rounded-t-lg">
-                <img src="/images/student attendance.png" className="w-full h-[300px] rounded-t-lg hover:scale-105 duration-500" alt="" />
-                </div>
-                <h2 className="pt-4 ml-4 text-2xl font-bold dark:text-gray-100">Student Attendance Tracker</h2>
-                <p className="p-4 dark:text-gray-300">An online student attendance tracker that allows students to mark their presence and view
-                 attendance for each class session. It provides a clear, easy-to-use interface where users can track attendance over time.
-                  The tool helps both students and teachers manage and monitor attendance efficiently.</p>
-                <div className="flex gap-2 mx-4 flex-wrap">
-                    <p className="py-1 px-2 bg-gray-100 dark:bg-gray-700 dark:text-gray-200 md:text-[14px] text-[12px] font-semibold rounded-full">HTML</p>
-                    <p className="py-1 px-2 bg-gray-100 dark:bg-gray-700 dark:text-gray-200 md:text-[14px] text-[12px] font-semibold rounded-full">Tailwind CSS</p>
-                    <p className="py-1 px-2 bg-gray-100 dark:bg-gray-700 dark:text-gray-200 md:text-[14px] text-[12px] font-semibold rounded-full">JavaScript</p>
-                </div>
-                <div className="ml-4 my-6">
-                    <a className="text-green-800 dark:text-green-400 text-[18px] font-semibold hover:text-green-700 dark:hover:text-green-300 transition hover:underline"
-                     href="https://student-attendance-neon.vercel.app" target="_blank" rel="noreferrer">↗️ Live Demo</a>
-                </div>
-            </div>
-        </div>
-
-        <div className="text-center">
-            <Link to="/projects" className="py-2 px-4 hover:bg-white dark:hover:bg-gray-800 hover:text-black dark:hover:text-white bg-green-700 border dark:border-green-700 text-white font-semibold
-             rounded-full block mt-10 mx-auto w-fit transition">View More ➡️</Link>
-        </div>
-    </section>
-    </>
+            <motion.div {...fadeInUp} className="text-center mt-20">
+                <Link to="/projects" className="inline-flex items-center gap-2 px-8 py-4 bg-green-700 hover:bg-green-800 text-white font-bold rounded-2xl transition-all shadow-lg hover:gap-4">
+                  View All Projects <span className="text-xl">→</span>
+                </Link>
+            </motion.div>
+        </section>
+      </div>
+    </PageWrapper>
   );
 }
 
