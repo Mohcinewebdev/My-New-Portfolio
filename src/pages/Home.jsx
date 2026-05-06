@@ -85,7 +85,7 @@ function Home() {
             <p className="text-gray-600 dark:text-gray-400 text-lg py-4 px-2 font-medium text-center max-w-2xl mx-auto">
               A collection of technologies I use to bring ideas to life.
             </p>
-            <div className="flex flex-wrap justify-center gap-6 px-4 mt-8">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:flex lg:flex-wrap justify-center gap-4 md:gap-6 px-4 mt-8 max-w-6xl mx-auto">
                 {[
                   { name: "HTML5", icon: "fa-html5", color: "text-orange-600" },
                   { name: "CSS3", icon: "fa-css3", color: "text-blue-600" },
@@ -106,7 +106,8 @@ function Home() {
                   <motion.div 
                     key={idx}
                     whileHover={{ y: -10, scale: 1.05 }}
-                    className="bg-white dark:bg-gray-800 border dark:border-gray-700 p-6 rounded-2xl text-center w-[140px] shadow-sm cursor-default"
+                    whileTap={{ scale: 0.95 }}
+                    className="bg-white dark:bg-gray-800 border dark:border-gray-700 p-6 rounded-2xl text-center shadow-sm cursor-default"
                   >
                     {skill.isDevicon ? (
                       <i className={`${skill.icon} text-5xl ${skill.color}`}></i>
@@ -180,6 +181,11 @@ function Home() {
                               {tag}
                             </span>
                           ))}
+                      </div>
+                      <div className="mt-8 md:hidden">
+                        <a href={proj.link} target="_blank" rel="noreferrer" className="text-green-700 dark:text-green-400 font-bold flex items-center gap-2">
+                          Live Demo <span>↗️</span>
+                        </a>
                       </div>
                     </div>
                   </motion.div>

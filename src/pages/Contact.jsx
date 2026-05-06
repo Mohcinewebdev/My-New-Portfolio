@@ -69,10 +69,13 @@ function Contact() {
                                 <label className="text-sm font-bold px-1 dark:text-gray-300">Message</label>
                                 <textarea className="w-full p-4 rounded-2xl bg-gray-50 dark:bg-gray-700/50 border border-transparent focus:border-green-600 outline-none transition-all dark:text-white resize-none" rows="5" placeholder="Your Message Here..."></textarea>
                             </div>
-                            <button className="w-full py-4 bg-green-600 hover:bg-green-700 text-white font-bold rounded-2xl transition-all shadow-lg shadow-green-600/20 flex items-center justify-center gap-2 group">
+                            <motion.button 
+                                whileTap={{ scale: 0.98 }}
+                                className="w-full py-4 bg-green-600 hover:bg-green-700 text-white font-bold rounded-2xl transition-all shadow-lg shadow-green-600/20 flex items-center justify-center gap-2 group"
+                            >
                                 Send Message
                                 <span className="group-hover:translate-x-1 transition-transform">→</span>
-                            </button>
+                            </motion.button>
                         </form>
                     </motion.div>
                 </div>

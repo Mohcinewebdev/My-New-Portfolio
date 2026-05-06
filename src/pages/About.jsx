@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import PageWrapper from "../components/PageWrapper";
+import { motion } from "framer-motion";
 
 function About() {
     return (
@@ -21,9 +22,11 @@ function About() {
             </div>
 
             <div className="text-center">
-                <Link to="/contact" className="inline-block px-10 py-4 bg-green-700 hover:bg-green-800 transition font-bold text-white rounded-2xl shadow-lg mb-12">
-                  Contact Me
-                </Link>
+                <motion.div whileTap={{ scale: 0.95 }} className="inline-block">
+                    <Link to="/contact" className="inline-block px-10 py-4 bg-green-700 hover:bg-green-800 transition font-bold text-white rounded-2xl shadow-lg mb-12">
+                      Contact Me
+                    </Link>
+                </motion.div>
             </div>
         </section>
       </PageWrapper>

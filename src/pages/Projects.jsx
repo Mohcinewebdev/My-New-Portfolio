@@ -74,6 +74,7 @@ function Projects() {
                         key={idx}
                         {...fadeInUp}
                         whileHover={{ y: -5 }}
+                        whileTap={{ scale: 0.98 }}
                         className="rounded-3xl bg-white dark:bg-gray-800 border dark:border-gray-700 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300"
                     >
                         <div className="overflow-hidden h-64 relative group">
