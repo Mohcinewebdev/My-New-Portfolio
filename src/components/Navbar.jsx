@@ -65,7 +65,7 @@ function Navbar() {
         </div>
         <div className="flex items-center space-x-2 border-l pl-6 dark:border-gray-700">
           {[
-            { icon: "fa-facebook", url: "https://www.facebook.com/mo.hcine.149843" },
+            { icon: "fa-facebook", url: "https://www.facebook.com/mohcine.z26" },
             { icon: "fa-instagram", url: "https://www.instagram.com/mohcine_z26" },
             { icon: "fa-telegram", url: "https://www.t.me/mohcine_z26" },
             { icon: "fa-linkedin", url: "https://www.linkedin.com/in/mohcene-ziadi-866b45366" },

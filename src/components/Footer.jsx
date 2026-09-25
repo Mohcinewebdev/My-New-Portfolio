@@ -33,7 +33,7 @@ function Footer() {
 
                 <div className="flex justify-center gap-6 mt-12 pb-12 border-b dark:border-gray-800">
                     {[
-                        { icon: "fa-facebook", url: "https://www.facebook.com/mo.hcine.149843" },
+                        { icon: "fa-facebook", url: "https://www.facebook.com/mohcine.z26" },
                         { icon: "fa-instagram", url: "https://www.instagram.com/mohcine_z26" },
                         { icon: "fa-telegram", url: "https://www.t.me/mohcine_z26" },
                         { icon: "fa-linkedin", url: "https://www.linkedin.com/in/mohcene-ziadi-866b45366" },
