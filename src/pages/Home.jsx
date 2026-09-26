@@ -42,7 +42,7 @@ function Home() {
             transition={{ duration: 0.8 }}
             className="flex-1 flex justify-center mt-12 md:mt-0"
           >
-            <img className="rounded-3xl border-4 border-green-800 md:w-[400px] w-[300px] shadow-2xl" src="./images/my-photo.jpg" alt="Mohcene Ziadi" />
+            <img className="rounded-3xl border-4 border-green-800 md:w-[400px] w-[300px] shadow-2xl" src="./images/my-selse.jpg" alt="Mohcene Ziadi" />
           </motion.div>
         </div>
       </main>
